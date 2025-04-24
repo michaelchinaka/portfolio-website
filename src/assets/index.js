@@ -67,6 +67,12 @@ import space from './projects/space-hub.png';
 import michaelBw from "./Michael's pictures/michael-bw.png";
 import michaelColour from "./Michael's pictures/michael-colour.png";
 
+import premPredictor from './projects/prem-predictor.png';
+import pytorchTutorial from './projects/pytorch-tutorial.png';
+import androidApp from './projects/android-app.png';
+import simulation from './projects/simulation.png';
+import cognitant from './projects/cognitant.png';
+
 export {
   bwmap,
   nairobi,
@@ -131,4 +137,9 @@ export {
   upswing,
   michaelBw,
   michaelColour,
+  premPredictor,
+  pytorchTutorial,
+  androidApp,
+  simulation,
+  cognitant,
 };
