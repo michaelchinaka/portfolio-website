@@ -13,10 +13,15 @@ const TechCard = ({ icon, name }) => {
                  hover:bg-battleGray hover:bg-opacity-20 group"
       whileHover={{ scale: 1.05, rotate: 360 }}
       whileTap={{ scale: 0.95 }}
-      transition={{ duration: 0.25, ease: "easeInOut" }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div className="w-16 h-16 flex items-center justify-center">
-        <img src={icon} alt={name} className="w-full h-full object-contain group-hover:filter group-hover:brightness-110" />
+        <img 
+          src={icon} 
+          alt={name} 
+          className={`w-full h-full object-contain group-hover:filter group-hover:brightness-110
+                     ${name === 'AWS' ? 'scale-[2]' : ''}`} 
+        />
       </div>
       <p className="text-[14px] text-taupe text-center mt-4 group-hover:text-timberWolf transition-colors duration-300">
         {name}
