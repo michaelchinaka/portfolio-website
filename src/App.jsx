@@ -1,12 +1,13 @@
 import { BrowserRouter } from 'react-router-dom';
 import {
   About,
-  Contact,
+  Footer,
   Experience,
   Hero,
   Navbar,
   Tech,
   Projects,
+  Certifications,
 } from './components';
 
 const App = () => {
@@ -37,9 +38,12 @@ const App = () => {
             <Experience />
           </div>
         </div>
-        <div className="relative z-0">
-          <Contact />
+
+        <div className="bg-flashWhite py-10">
+          <Certifications />
         </div>
+
+        <Footer />
       </div>
     </BrowserRouter>
   );

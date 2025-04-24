@@ -10,14 +10,21 @@ const TechCategory = ({ title, items }) => {
     <div className="mb-12">
       <h3 className="text-[24px] font-bold text-timberWolf mb-8">{title}</h3>
       <div className="flex flex-wrap justify-start gap-10">
-        {items.map((technology) => (
-          <div className="w-28 h-32 flex flex-col items-center" key={technology.name}>
-            <div className="w-28 h-28">
-              <BallCanvas icon={technology.icon} />
+        {items.map((technology) => {
+          // Debug logging
+          const img = new Image();
+          img.onerror = () => console.log(`Failed to load icon for: ${technology.name}`, technology.icon);
+          img.src = technology.icon;
+
+          return (
+            <div className="w-28 h-32 flex flex-col items-center" key={technology.name}>
+              <div className="w-28 h-28">
+                <BallCanvas icon={technology.icon} />
+              </div>
+              <p className="text-[14px] text-taupe text-center mt-2">{technology.name}</p>
             </div>
-            <p className="text-[14px] text-taupe text-center mt-2">{technology.name}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -46,4 +53,4 @@ const Tech = () => {
   );
 };
 
-export default SectionWrapper(Tech, '');
+export default SectionWrapper(Tech, 'tech');

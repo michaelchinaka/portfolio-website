@@ -40,13 +40,13 @@ import docker from './tech/docker.png';
 import git from './tech/git.png';
 import aws from './tech/aws.png';
 import terraform from './tech/terraform.png';
-import sql from './tech/sql.svg';
+import sql from './tech/sql.png';
 import nosql from './tech/nosql.png';
-import spark from './tech/apachespark.svg';
+import spark from './tech/apachespark.png';
 import pytorch from './tech/pytorch-logo.png';
 import sklearn from './tech/scikit-learn.png';
 import matplotlib from './tech/matplotlib.png';
-import seaborn from './tech/seaborn-1.svg';
+import seaborn from './tech/seaborn.png';
 
 import coverhunt from './company/coverhunt.png';
 import dcc from './company/dcc.png';
@@ -63,6 +63,9 @@ import math from './projects/math-magicians.png';
 import movie from './projects/movie-metro.png';
 import nyeusi from './projects/nyeusi.png';
 import space from './projects/space-hub.png';
+
+import michaelBw from "./Michael's pictures/michael-bw.png";
+import michaelColour from "./Michael's pictures/michael-colour.png";
 
 export {
   bwmap,
@@ -125,5 +128,7 @@ export {
   lead2,
   ibm,
   wimbledon,
-  upswing
+  upswing,
+  michaelBw,
+  michaelColour,
 };
