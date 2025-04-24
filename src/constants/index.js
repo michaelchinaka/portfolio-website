@@ -39,7 +39,12 @@ import {
   lead2,
   ibm,
   wimbledon,
-  upswing
+  upswing,
+  premPredictor,
+  pytorchTutorial,
+  androidApp,
+  simulation,
+  cognitant
 } from '../assets';
 
 export const navLinks = [
@@ -216,115 +221,45 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
-    name: 'KomiKult',
-    description: 'A comic characters list app that displays Marvel characters.',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'mongodb',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'tailwind',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: komikult,
-    repo: 'https://github.com/shaqdeff/KomiKult',
-    demo: 'https://shaqdeff.github.io/KomiKult/',
+    name: 'Premier League Results Predictor',
+    description: 'A machine learning model that predicts Premier League match outcomes using historical data and advanced statistical analysis.',
+    tags: ['Python', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'AWS'],
+    image: premPredictor,
+    repo: 'https://github.com/michaelchinaka/football_matches',
+    demo: 'https://your-demo-link.com/predictor',
   },
   {
     id: 'project-2',
-    name: 'Leaderboard',
-    description:
-      'A leaderboard list app that displays scores submitted by different players.',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'restapi',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'scss',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: leaderboard,
-    repo: 'https://github.com/shaqdeff/Leaderboard',
-    demo: 'https://shaqdeff.github.io/Leaderboard/',
+    name: 'PyTorch Tutorial',
+    description: 'Twisting the premier league results predictor to a PyTorch tutorial. A comprehensive tutorial series covering PyTorch fundamentals, neural networks, and deep learning concepts with practical examples.',
+    tags: ['Python', 'Jupyter', 'PyTorch', 'NumPy'],
+    image: pytorchTutorial,
+    repo: 'https://github.com/michaelchinaka/pytorch-tutorial.io?tab=readme-ov-file',
+    demo: 'https://michaelchinaka.github.io/pytorch-tutorial.io/',
   },
   {
     id: 'project-3',
-    name: 'Math Magicians',
-    description: 'This is a single-page calculator app built with React',
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'supabase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: math,
-    repo: 'https://github.com/shaqdeff/Math-Magicians',
-    demo: 'https://inspiring-medovik-37d3b3.netlify.app/',
-  },
-  {
-    id: 'project-4',
-    name: 'Movie Metro',
-    description: `A single-page application that allows users to search for any movie or show's ratings and its details.`,
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'supabase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: movie,
-    repo: 'https://github.com/shaqdeff/Movie-Metro',
-    demo: 'https://movie-metro.netlify.app/',
+    name: 'Android Fridge Management App',
+    description: 'A mobile application for managing household groceries, tracking expiration dates, suggesting recipes, and generating shopping lists automatically.',
+    tags: ['Java', 'Android Studio'],
+    image: androidApp,
+    repo: 'https://github.com/michaelchinaka/android-app',
+    demo: 'https://play.google.com/store/apps/details?id=com.yourapp.fridgemanager',
   },
   {
     id: 'project-5',
-    name: 'Nyeusi Fest Site',
-    description:
-      'This is a demo concert website for a music festival called Nyeusi.',
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'supabase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: nyeusi,
-    repo: 'https://github.com/shaqdeff/Nyeusi-Fest-Site',
-    demo: 'https://shaqdeff.github.io/Nyeusi-Fest-Site/',
+    name: 'AI Document Assistant',
+    description: 'An intelligent tool that uses NLP and retrieval-augmented generation (RAG) to let you ask a chat assistant questions about your documents and receive accurate, citation-backed responses.',
+    tags: ['React', 'JavaScript', 'Flask', 'AWS', 'NLP'],
+    image: cognitant,
+    demo: 'https://your-demo-link.com/doc-assistant',
+  },
+  {
+    id: 'project-4',
+    name: 'Simulation Framework (IBM)',
+    description: 'A simulation framework that automates the simulation and analysis of event data. Designed to improve reproducibility and scalability, it streamlines the automation of ETL pipelines and structured result capture.',
+    tags: ['Java', 'Docker', 'Bash'],
+    image: simulation
   },
 ];
 
