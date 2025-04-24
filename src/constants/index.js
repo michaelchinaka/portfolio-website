@@ -249,7 +249,7 @@ const projects = [
   {
     id: 'project-5',
     name: 'AI Document Assistant',
-    description: 'An intelligent document processing system that leverages NLP to analyze, summarize, and extract information from various document formats.',
+    description: 'An intelligent tool that uses NLP and retrieval-augmented generation (RAG) to let you ask a chat assistant questions about your documents and receive accurate, citation-backed responses.',
     tags: ['React', 'JavaScript', 'Flask', 'AWS', 'NLP'],
     image: cognitant,
     demo: 'https://your-demo-link.com/doc-assistant',
@@ -257,7 +257,7 @@ const projects = [
   {
     id: 'project-4',
     name: 'Simulation Framework (IBM)',
-    description: 'A robust simulation framework developed for IBM, enabling complex system modeling and analysis using containerized microservices.',
+    description: 'A simulation framework that automates the simulation and analysis of event data. Designed to improve reproducibility and scalability, it streamlines the automation of ETL pipelines and structured result capture.',
     tags: ['Java', 'Docker', 'Bash'],
     image: simulation
   },
