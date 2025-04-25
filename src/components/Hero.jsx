@@ -95,7 +95,7 @@ const Hero = () => {
           <img
             className="absolute bottom-0 
             ml-[30vw] xs:ml-[35vw] sm:ml-[40vw] md:ml-[50vw] lg:ml-[55vw] 2xl:ml-[63vw]
-            h-[60vh] xs:h-[65vh] sm:h-[70vh] md:h-[70vh] xl:h-[80vh]
+            h-[58vh] xs:h-[65vh] sm:h-[70vh] md:h-[70vh] xl:h-[80vh]
             object-contain"
             src={michaelBw}
             alt="Michael"
