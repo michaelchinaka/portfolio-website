@@ -38,6 +38,7 @@ export default {
         md: '768px',
         xmd: '900px',
         lg: '1025px',
+        nav: '1150px',
         xl: '1280px',
         '2xl': '1536px',
         '3xl': '1800px',
