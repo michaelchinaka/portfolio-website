@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { styles } from '../styles';
@@ -76,8 +76,54 @@ const SlideNavButton = ({ direction, onClick, disabled }) => (
   </button>
 );
 
+const ImageLoader = ({ src, alt, className }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className="relative w-full h-full">
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="w-8 h-8 border-4 border-gray-300 border-t-gray-800 rounded-full animate-spin"></div>
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+        onLoad={() => setIsLoaded(true)}
+      />
+    </div>
+  );
+};
+
 const FridgeDemo = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
+
+  // Preload all images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = guideSections.map((section) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = section.image;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+
+      try {
+        await Promise.all(imagePromises);
+        setImagesPreloaded(true);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        // Still set as preloaded to not block the UI
+        setImagesPreloaded(true);
+      }
+    };
+
+    preloadImages();
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === guideSections.length - 1 ? 0 : prev + 1));
@@ -130,7 +176,7 @@ const FridgeDemo = () => {
           >
             <div className="relative">
               {/* Image Container */}
-              <div className="relative bg-gray-100 flex justify-center items-center">
+              <div className="relative bg-gray-100 flex justify-center items-center min-h-[300px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentIndex}
@@ -140,7 +186,7 @@ const FridgeDemo = () => {
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <img
+                    <ImageLoader
                       src={guideSections[currentIndex].image}
                       alt={guideSections[currentIndex].title}
                       className="w-full h-auto object-contain max-h-[60vh]"
@@ -151,12 +197,12 @@ const FridgeDemo = () => {
                 <SlideNavButton 
                   direction="left" 
                   onClick={prevSlide} 
-                  disabled={currentIndex === 0}
+                  disabled={!imagesPreloaded || currentIndex === 0}
                 />
                 <SlideNavButton 
                   direction="right" 
                   onClick={nextSlide} 
-                  disabled={currentIndex === guideSections.length - 1}
+                  disabled={!imagesPreloaded || currentIndex === guideSections.length - 1}
                 />
               </div>
 
@@ -170,6 +216,7 @@ const FridgeDemo = () => {
                       ${idx === currentIndex 
                         ? 'bg-eerieBlack w-4' 
                         : 'bg-gray-300 hover:bg-gray-400'}`}
+                    disabled={!imagesPreloaded}
                   />
                 ))}
               </div>
