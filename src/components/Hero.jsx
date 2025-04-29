@@ -70,7 +70,7 @@ const Hero = () => {
         <div
           className="absolute xs:bottom-10 bottom-32 w-full 
           flex justify-center items-center">
-          <a href="#about">
+          <a href="#about" className="hidden sm:block">
             <div
               className="w-[35px] h-[64px] rounded-3xl border-4 
             border-french border-dim flex
