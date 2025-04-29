@@ -34,7 +34,15 @@ const ProjectCard = ({ name, description, image, repo, demo, tags, index }) => {
       </div>
 
       <div className="mt-4 sm:mt-5 flex-grow">
-        <h3 className="text-timberWolf font-bold text-[20px] sm:text-[24px]">{name}</h3>
+        <h3 className="text-timberWolf font-bold text-[20px] sm:text-[24px]">
+          {name}
+          {name === "AI Document Assistant" && (
+            <span className="ml-3 inline-flex items-center">
+              <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></span>
+              <span className="ml-2 text-[14px] sm:text-[16px] text-green-500 font-normal">In Development</span>
+            </span>
+          )}
+        </h3>
         <p className="mt-2 text-silver text-[12px] sm:text-[14px]">{description}</p>
       </div>
 
@@ -48,11 +56,11 @@ const ProjectCard = ({ name, description, image, repo, demo, tags, index }) => {
         ))}
       </div>
 
-      {demo && (
+      {demo && name !== "AI Document Assistant" && (
         <button
-          className="live-demo flex justify-between 
+          className="live-demo flex items-center 
           text-[12px] sm:text-[14px] text-timberWolf font-bold font-beckman 
-          items-center py-4 sm:py-5 pl-2 pr-3 whitespace-nowrap gap-1 
+          py-4 sm:py-5 px-3 gap-2
           w-[115px] sm:w-[125px] h-[40px] sm:h-[46px] rounded-[10px] glassmorphism 
           mt-[16px] hover:bg-battleGray hover:text-eerieBlack 
           transition duration-[0.2s] ease-in-out"
@@ -72,7 +80,7 @@ const ProjectCard = ({ name, description, image, repo, demo, tags, index }) => {
             alt="pineapple"
             className="btn-icon w-[25px] h-[25px] sm:w-[30px] sm:h-[30px] object-contain"
           />
-          LIVE DEMO
+          DEMO
         </button>
       )}
     </motion.div>
