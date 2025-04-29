@@ -244,7 +244,7 @@ const projects = [
     tags: ['Java', 'Android Studio'],
     image: androidApp,
     repo: 'https://github.com/michaelchinaka/android-app',
-    demo: 'https://play.google.com/store/apps/details?id=com.yourapp.fridgemanager',
+    demo: '/fridge-demo',
   },
   {
     id: 'project-5',

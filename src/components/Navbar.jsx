@@ -52,11 +52,22 @@ const Navbar = () => {
               <FaLinkedin className="w-6 h-6 sm:w-8 sm:h-8 text-eerieBlack hover:text-battleGray" />
             </a>
             <a 
-              href="/Michael_Chinaka_CV.pdf"
+              href="/Michael_CV.pdf"
               download
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 bg-eerieBlack text-white rounded-full
               hover:bg-battleGray transition-all duration-300 hover:shadow-lg hover:scale-110"
               aria-label="Download CV"
+              onClick={(e) => {
+                e.preventDefault();
+                const link = document.createElement('a');
+                link.href = '/Michael_CV.pdf';
+                link.download = 'Michael_CV.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             >
               <HiDownload className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
