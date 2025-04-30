@@ -158,7 +158,7 @@ const Projects = () => {
               Built with React and Tailwind CSS
             </p>
             <a
-              href="https://github.com/michaelchinaka/Portfolio-Template"
+              href="https://github.com/michaelchinaka/portfolio-website"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-3 text-silver hover:text-timberWolf transition-colors duration-300 text-[12px] sm:text-[14px]">
